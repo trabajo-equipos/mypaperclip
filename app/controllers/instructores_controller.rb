@@ -17,6 +17,7 @@ class InstructoresController < ApplicationController
 
   def new
       @instructor = Instructor.new
+      
   end
 
   def edit
@@ -24,9 +25,19 @@ class InstructoresController < ApplicationController
   end
 
   def create
-      @instructor = Instructor.new(params[:instructor])
-      render :action => :new unless @instructor.save
-      @instructores = Instructor.all
+      #@instructor = Instructor.new(params[:instructor])
+      #render :action => :new unless @instructor.save
+      #@instructores = Instructor.all
+       @instructor = Instructor.new(params[:instructor])
+      respond_to do |format|
+      if @instructor.save
+        format.html { redirect_to instructores_path, notice: 'Post was successfully created.' }
+        format.json { render json: @instructor, status: :created, location: @instructor }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @instructor.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update

@@ -28,6 +28,8 @@ gem 'gchart'
 gem "googlecharts", "~> 1.6.8"
 gem "geocoder", "~> 1.1.6"
 gem 'nifty-generators'
+gem 'paperclip'
+gem 'aws-sdk'
 end
 
 gem 'jquery-rails'

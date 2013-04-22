@@ -6,6 +6,8 @@
   <%= f.input :cedula %>
   <%= f.input :email %>
   <%= f.input :direccion %>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
   <p>
   <%= f.label :materia_id %>
   <%= f.collection_select :materia_id, Materia.all, :id, :nombre, prompt: "Materias"  %>

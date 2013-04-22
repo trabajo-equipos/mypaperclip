@@ -1,6 +1,12 @@
 class Instructor < ActiveRecord::Base
   belongs_to :materia
-  attr_accessible :cedula, :direccion, :email, :nombre, :materia_id
+  attr_accessible :cedula, :direccion, :email, :nombre, :materia_id,:avatar
+ # This method associates the attribute ":avatar" with a file attachment
+  has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
 
    
 	validates :cedula, :presence => true, :length => { :minimum => 10, :maximum => 15 },
@@ -16,3 +22,4 @@ class Instructor < ActiveRecord::Base
 		where('nombre like ?', "%#{search}%")
 	end
 end
+
