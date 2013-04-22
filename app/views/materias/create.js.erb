@@ -1,0 +1,4 @@
+$('table tbody').append("<%= escape_javascript(render @materia) %>")
+//$("p#total_regs").attr('value','<%= @materias.count %>');
+$("p#total_regs").text('total materias <%= @materias.count %>');
+$.lazybox.close()

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  cedula: MyString
+  email: MyString
+  direccion: MyString
+  materia: 
+
+two:
+  nombre: MyString
+  cedula: MyString
+  email: MyString
+  direccion: MyString
+  materia: 

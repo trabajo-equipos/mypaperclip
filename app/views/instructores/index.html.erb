@@ -1,0 +1,67 @@
+<%- model_class = Instructor -%>
+<div class="page-header">
+  <h1>Instructores</h1>
+</div>
+<div class="row">
+    <div class="span2"> 
+    </div>
+    <div class="span10">
+      <%= form_tag request.path, :method => 'get' do %>
+      <%= content_tag :label do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Consultar", :name => nil %>
+     
+      <% end %>
+      <% end %>
+    
+  </div>
+    
+
+ <div class="row">
+    <div class="span2"> 
+</div>
+<div class="span10">
+<table class="table table-hover table-bordered table-condensed pretty ">
+
+  <thead>
+    <tr >
+     <th><%=  sortable  "id"  %></th>
+      <th><%= "Nombre" %></th>
+      <th><%= "Cedula" %></th>
+      <th><%= "Email" %></th>
+      <th><%= "Direccion" %></th>
+      <th><%= "Profecionalismo" %></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @instructores %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_instructor_path,  :remote => true %></td>
+   
+    </tr>
+  </tfoot>
+  <tfoot>
+    <tr>
+      <td>
+    <b>Total Instructores</b>
+  </td>
+    <td>
+   <p id='total_regs'><%= @instructores.total_entries %></p>
+  </td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+   <br />
+  <br />
+  <div align="center">
+    <div class="pagination">
+    </ul>
+    <%= will_paginate @instructores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+    &raquo;' %>
+  </ul>
+  </div>
+</div>

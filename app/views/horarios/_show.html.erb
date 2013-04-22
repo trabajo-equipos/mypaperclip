@@ -1,0 +1,23 @@
+<%- model_class = Horario -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='team'>
+  <p>id: <%= @horario.id %></p>
+  <p>descripcion: <%= @horario.fecha %></p>
+   <p>descripcion: <%= @horario.hora %></p>
+    <p>descripcion: <%= @horario.aula %></p>
+      <p>descripcion: <%= @horario.curso_id %></p>
+       <p>descripcion: <%= @horario.instructor_id %></p>
+        <p>descripcion: <%= @horario.materia_id %></p>
+
+    
+   
+ 
+
+
+</div>
+
+  <p><%= link_to "(PDF)", horario_path(@horario, :format => 'pdf') %></p>
+

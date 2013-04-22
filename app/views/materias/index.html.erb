@@ -1,0 +1,70 @@
+<%- model_class = Materia -%>
+<div class="page-header">
+  <h1>Materias</h1>
+</div>
+<div class="row">
+    <div class="span2"> 
+    </div>
+    <div class="span10">
+      <div class="control-group">
+      <%= form_tag request.path, :class => 'form-vertical', :method => 'get' do %>
+      <%= content_tag :label, :class => 'control-label' do %>
+      <h4>Bucar Materias</h4>
+      <%= text_field_tag :search, params[:search], :class => 'text_field' %>
+      <%= submit_tag "Consultar", :class => 'btn btn-medium', :name => nil %>
+      <%= content_tag :label, :class => 'control-label' do %>
+      <h4>Registros Mostrar</h4>
+      <%= text_field_tag :registro, params[:registro], :class => 'text_field'  %>
+      <%= submit_tag "Consultar", :class => 'btn btn-medium'  %>
+
+      <% end %>
+      <% end %>
+      <% end %>   
+  </div>
+ <div class="row">
+    <div class="span2"> 
+</div>
+<div class="span10">
+<table class="table table-hover table-bordered table-condensed pretty">
+
+  <thead>
+    <tr >
+      <th><%= sortable "id" %></th>
+      <th><%= sortable "nombre" %></th>
+      <th><%= sortable "sigla", "Sigla" %></th>
+       <th></th>
+       <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @materias %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_materia_path,  :remote => true %></td>
+   
+    </tr>
+  </tfoot>
+  <tfoot>
+    <tr>
+      <td>
+    <b>Total Materias</b>
+  </td>
+    <td>
+   <p id='total_regs'><%= @materias.total_entries %></p>
+  </td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+   <br />
+  <br />
+  <div align="center">
+    <div class="pagination">
+    </ul>
+    <%= will_paginate @materias, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+    &raquo;' %>
+  </ul>
+  </div>
+</div>

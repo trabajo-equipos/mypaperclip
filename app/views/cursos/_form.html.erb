@@ -1,0 +1,17 @@
+<%= simple_form_for(@curso, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  	<%= f.error_notification %>
+  	<%= display_base_errors @curso %>
+	<%= f.input :nombre %>
+ 	<%= f.input :ficha %>
+ 	
+ 	<p>
+      <%= f.label :instructor_id %>
+      <%= f.collection_select :instructor_id, Instructor.all, :id, :nombre, prompt: "Selecione Instructor"  %>
+    </p>
+  	
+  	<div class="form-actions">
+	    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+	    <%= link_to 'Atras', cursos_path, :class => 'btn btn-small' %>
+  	</div>
+<% end %>

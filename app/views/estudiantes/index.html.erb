@@ -1,0 +1,65 @@
+<%- model_class = Estudiante -%>
+  <div class="page-header">
+    <h1><%= link_to image_tag("php.png ")%> <%= @curso.nombre %></h1>
+
+
+  </div>    
+  <div class="row">
+    <div class="span4"> 
+  </div>
+  <div class="span12">
+      <%= form_tag request.path, :method => 'get' do %>
+      <%= content_tag :label do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Consultar", :name => nil %>
+      <% end %>
+      <% end %>
+  </div>
+  <div class="row">
+    <div class="span4"> 
+  </div>
+    <div class="span11">
+      <table class="table table-hover table-bordered table-condensed pretty">
+        <thead>
+          <tr>
+            <th><%=  sortable "id" %></th>
+            <th>Nombres</th>
+            <th>cedula</th>
+            <th>email</th>
+            <th>direccion</th>
+            <th>fecha nacimiento</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @estudiantes %>
+        </tbody>
+          <tfoot>
+            <tr>
+              <td><%= link_to image_tag("participantes.png"), new_curso_estudiante_path, :remote => true  %> </td>
+              <td><%= link_to image_tag("atras.png"), cursos_path %></td>
+            </tr>
+          </tfoot>
+        <tfoot>
+          <tr>
+            <td><b>Total Aprendices</b>
+            </td>
+            <td><%= @estudiantes.total_entries %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="row">
+    <div class="span2"> 
+  </div>
+  <div class="span10">
+  
+    <div class="pagination">
+    </ul>
+    <%= will_paginate @estudiantes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+    &raquo;' %>
+  </ul>
+  </div>
+</div>
+</div>

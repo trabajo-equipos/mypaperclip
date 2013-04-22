@@ -1,0 +1,28 @@
+ <body>
+    <header class="jumbotron masthead" id="overview">
+      <div class="inner">
+        <div class="container">
+          <h1>Taller de Ruby on Rails</h1>
+          <p class="lead">
+            Usando bootstrap y gemas de rails 3.2.13 .<br />
+            It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.<br />
+          </p>
+          <p><strong>Nerd alert:</strong> Bootstrap is <a href="#less" title="Read about using Bootstrap with Less">built with Less</a> and was designed to work out of the gate with modern browsers in mind.</p>
+         
+          <p><%= link_to image_tag("horario.png ", :title => "Porfavor verifique sus horarios"),  horarios_path, :class => 'brand' %></p>
+        </div><!-- /container -->
+      </div>
+      <td><%= link_to image_tag('pdf1.png', :tile => "Agregar cursos"),  horarios_path %></td>
+
+    </header>
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>
+          Diseñado y construido con todo el amor del mundo <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+          Código licenciado bajo la<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Ruby  on rails License 2013</a>. Documentación disponible bajo <a href="http://creativecommons.org/licenses/by/3.0/">APRADSI2013-2013</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+
+<ul>
+<% for ubicacion in @ubicacion.nearbys(10) %>
+  <li><%= link_to ubicacion.nombre, ubicacion %> (<%= ubicacion.distance.round(2) %> miles)</li>
+<% end %>
+</ul<% title "Ubicacion" %>
+
+<p>
+  <strong>Nombres:</strong>
+  <%= @ubicacion.nombre %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @ubicacion.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @ubicacion.longitude %>
+</p>
+
+<h3>Nearby Locations</h3>
+<ul>
+<% for location in @ubicacion.nearbys(10) %>
+  <li><%= link_to ubicacion.address, ubicacion %> (<%= ubicacion.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+<p>
+  <%= link_to "Edit", edit_ubicacion_path(@ubicacion) %> |
+  <%= link_to "Destroy", @location, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", ubicacions_path %>
+  
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+
+
+</p>
+

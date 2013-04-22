@@ -1,0 +1,21 @@
+<tr id=<%= "materia_#{materia.id}" %>
+  <td></td>
+  <td><%= link_to materia.id, edit_materia_path(materia), :remote => true %></td>
+  <td><%= materia.nombre %></td>
+  <td><%= materia.sigla %></td>
+  <td>
+  <%= link_to  image_tag('mostrar.png'), materia,     :remote => true, :class => 'btn btn-mini' %>
+
+    <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_materia_path(materia),  :remote => true,
+        :class => 'btn btn-mini'%>
+    <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), materia, :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        
+  </td>
+</tr>
+  
+         
+            
+             
+              
+       

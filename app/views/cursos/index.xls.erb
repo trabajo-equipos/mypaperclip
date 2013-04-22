@@ -1,0 +1,17 @@
+<h1>Lista de Cursos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Ficha</th>
+    <th>Instructor_id</th>
+    <th></th>
+  </tr>
+<% @cursos.each do |curso| %>
+  <tr>
+    <td><%= curso.nombre %></td>
+    <td><%= curso.ficha %></td>
+    <td><%= curso.instructor_id %></td>
+  </tr>
+<% end %>
+</table>
