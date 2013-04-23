@@ -1,6 +1,6 @@
 class Instructor < ActiveRecord::Base
   belongs_to :materia
-  attr_accessible :cedula, :direccion, :email, :nombre, :materia_id,:avatar
+  attr_accessible :cedula, :direccion, :email, :nombre, :materia_id, :avatar
  # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :avatar, styles: {
     thumb: '100x100>',

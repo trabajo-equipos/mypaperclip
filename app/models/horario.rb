@@ -5,8 +5,6 @@ class Horario < ActiveRecord::Base
   belongs_to :instructor
 
    
-    
-
   def self.search(search)
 		where('aula like ?', "%#{search}%")
 	end

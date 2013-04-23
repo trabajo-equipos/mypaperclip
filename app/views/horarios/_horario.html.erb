@@ -4,8 +4,8 @@
   <td><%= horario.fecha %></td>
   <td><%= horario.hora %></td>
   <td><%= horario.aula %></td>
-  <td><%= horario.curso.nombre %></td>
-  <td><%= horario.instructor.nombre %></td>
+  <td><%= horario.curso_id %></td>
+  <td><%= horario.instructor_id %></td>
   <td><%= horario.materia.nombre %></td>
   <td><%= link_to image_tag("pdf1.png"), horario_path(horario, :format => "pdf") %></td>
   <td>
