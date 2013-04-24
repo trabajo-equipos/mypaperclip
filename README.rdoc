@@ -3,3 +3,7 @@ Bienvenidos a mis ejemplos  de rails  utilizando git como control de versiones.
 Esta aplicacion muestra como adicionar fotos utilizando la Gema Paperclip en Rails3 versión 3.2.13
 
 ejemplos de  githud
+
+ejemplos utilizandos ramas 
+
+inportantes
