@@ -6,11 +6,7 @@
           <p class="lead">
             Usando bootstrap y gemas de rails 3.2.13 .<br />
             It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.<br />
-          </p>
-          <p><strong>Nerd alert:</strong> Bootstrap is <a href="#less" title="Read about using Bootstrap with Less">built with Less</a> and was designed to work out of the gate with modern browsers in mind.</p>
-        </div><!-- /container -->
-      </div>
-    </header>
+
     <footer class="footer">
       <div class="container">
         <p class="pull-right"><a href="#">Back to top</a></p>
