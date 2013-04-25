@@ -10,74 +10,34 @@ class ColegiosController < ApplicationController
     end
   end
 
-  # GET /colegios/1
-  # GET /colegios/1.json
   def show
-    @colegio = Colegio.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @colegio }
-    end
+      @colegio = Colegio.find(params[:id])
+      #@materia = Materia.find(params[:materia])
   end
 
-  # GET /colegios/new
-  # GET /colegios/new.json
   def new
-    @colegio = Colegio.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @colegio }
-    end
+      @colegio = Colegio.new
   end
 
-  # GET /colegios/1/edit
   def edit
-    @colegio = Colegio.find(params[:id])
+      @colegio = Colegio.find(params[:id])
   end
 
-  # POST /colegios
-  # POST /colegios.json
   def create
-    @colegio = Colegio.new(params[:colegio])
-
-    respond_to do |format|
-      if @colegio.save
-        format.html { redirect_to @colegio, notice: 'Colegio was successfully created.' }
-        format.json { render json: @colegio, status: :created, location: @colegio }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @colegio.errors, status: :unprocessable_entity }
-      end
-    end
+      @colegio = Colegio.new(params[:colegio])
+      render :action => :new unless @colegio.save
+      #@materias = Materia.all
   end
 
-  # PUT /colegios/1
-  # PUT /colegios/1.json
   def update
-    @colegio = Colegio.find(params[:id])
-
-    respond_to do |format|
-      if @colegio.update_attributes(params[:colegio])
-        format.html { redirect_to @colegio, notice: 'Colegio was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @colegio.errors, status: :unprocessable_entity }
-      end
-    end
+      @colegio = Colegio.find(params[:id])
+      render :action => :edit unless @colegio.update_attributes(params[:colegio])
   end
 
-  # DELETE /colegios/1
-  # DELETE /colegios/1.json
   def destroy
-    @colegio = Colegio.find(params[:id])
-    @colegio.destroy
-
-    respond_to do |format|
-      format.html { redirect_to colegios_url }
-      format.json { head :no_content }
-    end
+      @colegio = Colegio.find(params[:id])
+      @colegio.destroy
+      #@materias = Materia.all
   end
+  
 end

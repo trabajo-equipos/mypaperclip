@@ -1,0 +1,12 @@
+<%- model_class = Colegio  -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='team'>
+  <p>id: <%= @colegio.id %></p>
+  <p>Nombre de colegio: <%= @colegio.nombre %></p>
+  <p>Direccion de colegio: <%= @colegio.direccion %></p>
+  <p>Telfono de el colegio: <%= @colegio.telefono %></p>
+ 
+</div>

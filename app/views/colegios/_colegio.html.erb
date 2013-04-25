@@ -1,0 +1,22 @@
+<tr id=<%= "colegio_#{colegio.id}" %>
+  <td></td>
+  <td><%= link_to colegio.id, edit_colegio_path(colegio), :remote => true %></td>
+  <td><%= colegio.nombre %></td>
+  <td><%= colegio.direccion %></td>
+   <td><%= colegio.telefono %></td>
+  <td>
+  <%= link_to  image_tag('mostrar.png'), colegio,     :remote => true, :class => 'btn btn-mini' %>
+
+    <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_colegio_path(colegio),  :remote => true,
+        :class => 'btn btn-mini'%>
+    <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), colegio, :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        
+  </td>
+</tr>
+  
+         
+            
+             
+              
+       

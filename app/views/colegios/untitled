@@ -1,0 +1,24 @@
+for i in 0..@materias.count %>
+
+<p>
+      <form class="form-horizontal" action="materias" method="get">
+      <select name="registro" ochange="actualizar" >
+        <option values="1">1</option>
+        <option values="2">2</option>
+        </select>
+        <input type="submit">
+        </form>
+      
+    </p>
+
+    git config --global user.name "jose gregorio avila cerezo"
+
+   
+ git config --global user.email "gregory1308@misena.edu.co"
+
+ gedit .gitignore
+
+ git add .
+ 
+
+ git commit -m " funciones de paginacion-Inicio Primer Commit"
