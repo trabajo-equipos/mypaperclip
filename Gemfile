@@ -4,6 +4,13 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 
+
+group :development do
+ gem 'better_errors'
+ gem 'binding_of_caller'
+ gem 'meta_request'
+end
+
 group :assets do
 gem 'sass-rails', '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
@@ -30,6 +37,7 @@ gem "geocoder", "~> 1.1.6"
 gem 'nifty-generators'
 gem 'paperclip'
 gem 'aws-sdk'
+
 end
 
 gem 'jquery-rails'
