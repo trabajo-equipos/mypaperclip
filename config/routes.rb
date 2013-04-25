@@ -1,5 +1,8 @@
 Escuela::Application.routes.draw do
 
+  resources :colegios
+
+
   get "studiantes/index"
 
   resources :ubicaciones
