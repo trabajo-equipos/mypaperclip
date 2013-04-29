@@ -25,10 +25,19 @@ class InstructoresController < ApplicationController
   end
 
   def create
+     
        @instructor = Instructor.new(params[:instructor])
-       render :action => :new unless @instructor.save 
-       @instructores = Instructor.all
-          
+     
+       #render :action => :new unless @instructor.save 
+       respond_to do |format|
+	  if @instructor.save 
+	    format.js
+	    #format.html { render :action => "index", :notice => 'Update SUCCESSFUL!' }
+	  else
+	    render :action => :new 
+	  end
+       end
+   
   end
 
   def update

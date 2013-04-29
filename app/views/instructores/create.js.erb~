@@ -1,0 +1,4 @@
+/*$('table tbody').append("<%= escape_javascript(render @instructor) %>")*/
+$.lazybox("<%= j(render 'show') %>")
+$("p#total_regs").text('<%= @instructores.count %>');
+$.lazybox.close()

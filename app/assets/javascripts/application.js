@@ -14,8 +14,10 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap
-//= require_tree .
 //= require lazybox
+//= require jquery.remotipart
+//= require_tree .
+
 
 $(document).ready(function() {
   //$('a#show_member_link').lazybox({closeImg: true});
